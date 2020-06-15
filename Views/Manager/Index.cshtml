@@ -1,0 +1,30 @@
+﻿@model  IEnumerable<musicshop.Models.Album>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br>
+<br>
+<a href="/Manager/Create/2">Create Album</a>
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Release Year</th>
+        <th>Photo</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Title</td>
+    <td>@item.Price</td>
+    <td>@item.ReleaseYear</td>
+    <td>@item.AlbumUrl</td>
+    <td><a href="/Manager/Edit/@item.AlbumId">Edit</a></td>
+</tr>
+    }
+
+</table>
+
